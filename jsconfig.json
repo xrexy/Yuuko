@@ -3,28 +3,28 @@
         "baseUrl": ".",
         "paths": {
             "#Utils/*": [
-                "./Utils/*"
+                "./src/Utils/*"
             ],
             "#Commands/*": [
-                "./Commands/*"
+                "./src/Commands/*"
             ],
             "#Structures/*": [
-                "./Structures/*"
+                "./src/Structures/*"
             ],
             "#GraphQL/*": [
-                "./GraphQL/*"
+                "./src/GraphQL/*"
             ],
             "#Models/*": [
-                "./Database/Models/*"
+                "./src/Database/Models/*"
             ],
             "#Caching/*": [
-                "./Caching/*"
+                "./src/Caching/*"
             ],
             "#RSA/*": [
-                "./RSA/*"
+                "./src/RSA/*"
             ],
             "#Middleware/*": [
-                "./Middleware/*"
+                "./src/Middleware/*"
             ]
         }
     }

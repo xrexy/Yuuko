@@ -5,7 +5,6 @@ module.exports = (command, interaction) => {
     try {
         const logPath = path.join(__dirname, "../Logging/logs.txt");
         const currentDate = new Date().toISOString();
-        console.log(typeof (currentDate));
         if (!fs.existsSync(path.join(__dirname, "../Logging" || !fs.existsSync(logPath)))) {
             fs.mkdirSync(path.join(__dirname, "../Logging"));
             fs.writeFileSync(logPath, 'Initiating log!');

@@ -1,7 +1,7 @@
 module.exports = {
-    apps : [{
-        name   : "Yuuko Production",
-        script : "app.js",
+    apps: [{
+        name: "Yuuko Production",
+        script: "./src/app.js",
         max_memory_restart: "500M",
         watch: ["commit.hash"],
         env_production: {

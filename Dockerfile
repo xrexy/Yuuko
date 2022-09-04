@@ -3,4 +3,4 @@ WORKDIR /usr/src/Yuuko
 COPY package*.json ./
 RUN yarn install --frozen-lockfile
 COPY . .
-CMD [ "node", "app.js" ]
+CMD [ "node", "./src/app.js" ]

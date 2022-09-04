@@ -2,9 +2,9 @@
   "name": "anisuggest",
   "version": "1.0.0",
   "description": "A bot that goes through your anilist and recommends you anime and manga.",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -34,28 +34,28 @@
   },
   "imports": {
     "#Utils/*": [
-      "./Utils/*"
+      "./src/Utils/*"
     ],
     "#Commands/*": [
-      "./Commands/*"
+      "./src/Commands/*"
     ],
     "#Structures/*": [
-      "./Structures/*"
+      "./src/Structures/*"
     ],
     "#GraphQL/*": [
-      "./GraphQL/*"
+      "./src/GraphQL/*"
     ],
     "#Models/*": [
-      "./Database/Models/*"
+      "./src/Database/Models/*"
     ],
     "#Caching/*": [
-      "./Caching/*"
+      "./src/Caching/*"
     ],
     "#RSA/*": [
-      "./RSA/*"
+      "./src/RSA/*"
     ],
     "#Middleware/*": [
-      "./Middleware/*"
+      "./src/Middleware/*"
     ]
   }
 }
