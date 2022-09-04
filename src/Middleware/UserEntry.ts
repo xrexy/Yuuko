@@ -1,5 +1,5 @@
 import { Interaction, Snowflake } from "discord.js";
-const Middleware = require("#Structures/Middleware.ts");
+import { Middleware } from "#Structures/Middleware";
 const AnilistUser = require("#Models/AnilistUser.js");
 
 type UserInteraction = Interaction & {

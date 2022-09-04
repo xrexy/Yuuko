@@ -1,5 +1,5 @@
 // TODO: Fix
-const Command = require("#Structures/Command.js"),
+const Command = require("#Structures/Command.ts"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     CommandCategories = require("#Utils/CommandCategories.ts"),
     { spawn, execSync } = require('child_process'),

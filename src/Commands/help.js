@@ -1,6 +1,6 @@
 const Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
-    Command = require("#Structures/Command.js"),
+    Command = require("#Structures/Command.ts"),
     fs = require("fs"),
     path = require("path"),
     BuildPagination = require("#Utils/BuildPagination.ts");

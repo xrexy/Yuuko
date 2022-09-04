@@ -1,5 +1,5 @@
 import AnilistUser = require("#Models/AnilistUser.js");
-const Middleware = require("#Structures/Middleware.ts");
+import { Middleware } from "#Structures/Middleware";
 import { Interaction, Snowflake } from "discord.js";
 import { RSAcryption } from '#Utils/RSACryption';
 

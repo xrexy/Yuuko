@@ -1,4 +1,4 @@
-class Middleware {
+export class Middleware {
     name: String;
     description: String;
     run: Function;
@@ -8,5 +8,3 @@ class Middleware {
         this.run = options.run;
     }
 }
-
-module.exports = Middleware;

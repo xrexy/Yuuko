@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 import { Interaction, Message, SlashCommandBuilder } from "discord.js";
+import { Middleware } from "#Structures/Middleware";
 import Client from "./Client.js";
 /**
  *
@@ -13,7 +14,7 @@ class Command {
   usage: String;
   name: String;
   description: String;
-  type: String;
+  type: Enumerator;
   run: Function;
   slash: SlashCommandBuilder;
   middlewares: Middleware;

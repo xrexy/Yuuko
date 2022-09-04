@@ -1,4 +1,4 @@
-const Command = require("#Structures/Command.js"),
+const Command = require("#Structures/Command.ts"),
     CommandCategories = require("#Utils/CommandCategories.ts"),
     Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),

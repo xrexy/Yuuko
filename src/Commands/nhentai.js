@@ -1,4 +1,4 @@
-const Command = require("#Structures/Command.js"),
+const Command = require("#Structures/Command.ts"),
     { SlashCommandBuilder } = require('discord.js'),
     CommandCategories = require("#Utils/CommandCategories.ts");
 

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const Command = require("./Command.js");
+const Command = require("./Command.ts");
 const Event = require("./Event.ts");
 const { SlashCommandBuilder, GatewayIntentBits } = require("discord.js");
 const { REST } = require("@discordjs/rest");
