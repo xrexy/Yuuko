@@ -1,8 +1,13 @@
-const Middleware = require("#Structures/Middleware.js");
+import { Interaction, Snowflake } from "discord.js";
+const Middleware = require("#Structures/Middleware.ts");
 const AnilistUser = require("#Models/AnilistUser.js");
 
-async function getUserEntry(interaction) {
-    let id = interaction.user.id;
+type UserInteraction = Interaction & {
+    alID?: String;
+}
+
+async function getUserEntry(interaction: UserInteraction) {
+    let id: Snowflake = interaction.user.id;
     let alUser = await AnilistUser.findOne({ where: { discord_id: id } });
     if (alUser && alUser.anilist_id) {
         interaction.alID = alUser.anilist_id;

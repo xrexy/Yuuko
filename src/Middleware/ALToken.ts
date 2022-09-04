@@ -1,21 +1,26 @@
-const Middleware = require("#Structures/Middleware.js");
-const AnilistUser = require("#Models/AnilistUser.js");
-const RSAcryption = require('#Utils/RSACryption.ts');
+import AnilistUser = require("#Models/AnilistUser.js");
+const Middleware = require("#Structures/Middleware.ts");
+import { Interaction, Snowflake } from "discord.js";
+import { RSAcryption } from '#Utils/RSACryption';
 
-async function requireALToken(interaction) {
-    let id = interaction.user.id;
+type TokenInteraction = Interaction & {
+    ALtoken?: String;
+}
+
+async function requireALToken(interaction: TokenInteraction) {
+    let id: Snowflake = interaction.user.id;
     let alUser = await AnilistUser.findOne({ where: { discord_id: id } });
     if (!alUser || !alUser.anilist_token) {
         throw new Error("You must have an AniList token set to use this action.");
     }
-    interaction.ALtoken = RSAcryption(alUser.anilist_token);
+    interaction.ALtoken = RSAcryption(alUser.anilist_token, true);
 }
 
-async function optionalALToken(interaction) {
-    let id = interaction.user.id;
+async function optionalALToken(interaction: TokenInteraction) {
+    let id: Snowflake = interaction.user.id;
     let alUser = await AnilistUser.findOne({ where: { discord_id: id } });
     if (alUser && alUser.anilist_token) {
-        interaction.ALtoken = RSAcryption(alUser.anilist_token);
+        interaction.ALtoken = RSAcryption(alUser.anilist_token, true);
     }
 }
 

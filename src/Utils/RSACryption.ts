@@ -2,13 +2,7 @@ import path = require('path');
 import fs = require('fs');
 import NodeRSA = require('node-rsa');
 
-/**
- * 
- * @param {String} item The item to decrypt/encrypt.
- * @param {Boolean} type If true decrypts it, if false it encrypts it. By default is true.
- * @returns {*} The decrypted/encrypted item.
- */
-module.exports = function (item: string, type?: boolean): string {
+export function RSAcryption(item: String, type: Boolean): String {
     if (type === true) {
         let itemContent = path.join(__dirname, '../RSA/id_rsa');
 
@@ -18,6 +12,7 @@ module.exports = function (item: string, type?: boolean): string {
 
         const decryptitem = new NodeRSA(fs.readFileSync(itemContent).toString());
         return decryptitem.decrypt(item, 'utf8');
+
     } else {
         let itemContent = path.join(__dirname, '../RSA/id_rsa.pub');
 

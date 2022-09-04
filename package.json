@@ -57,5 +57,8 @@
     "#Middleware/*": [
       "./src/Middleware/*"
     ]
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.1.0"
   }
 }

@@ -1,6 +1,6 @@
 const Discord = require("discord.js"),
     Command = require("#Structures/Command.js"),
-    { mwRequireALToken } = require("#Middleware/ALToken.js"),
+    { mwRequireALToken } = require("#Middleware/ALToken.ts"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     EmbedError = require("#Utils/EmbedError.ts"),
     Footer = require("#Utils/Footer.ts"),

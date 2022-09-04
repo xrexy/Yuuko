@@ -1,4 +1,4 @@
-import { EmbedBuilder, Embed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 /**
  * Returns a Discord embed with the error message.
@@ -6,7 +6,7 @@ import { EmbedBuilder, Embed } from "discord.js";
  * @param {Object} params The parameters the user specified that might
  *                        have caused this error.
  * @param {Boolean} [showParams=true] Whether or not to show the parameters.
- * @returns {Embed} The embed.
+ * @returns {EmbedBuilder} The embed.
  */
 module.exports = (err, params = null, showparams = true) => {
     const embed = new EmbedBuilder()

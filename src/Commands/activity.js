@@ -1,6 +1,6 @@
 const Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
-    { mwGetUserEntry } = require("#Middleware/UserEntry.js"),
+    { mwGetUserEntry } = require("#Middleware/UserEntry.ts"),
     Command = require("#Structures/Command.js"),
     EmbedError = require("#Utils/EmbedError.ts"),
     Footer = require("#Utils/Footer.ts"),
