@@ -1,4 +1,4 @@
-const Event = require("#Structures/Event.js"),
+const Event = require("#Structures/Event.ts"),
     { EmbedBuilder } = require('discord.js'),
     Logging = require('#Utils/Logging.ts'),
     EmbedError = require("#Utils/EmbedError.ts");

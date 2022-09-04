@@ -1,4 +1,4 @@
-const Event = require("#Structures/Event.js");
+const Event = require("#Structures/Event.ts");
 const { ActivityType } = require('discord.js');
 const fs = require("fs");
 

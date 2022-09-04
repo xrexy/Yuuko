@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const Command = require("./Command.js");
-const Event = require("./Event.js");
+const Event = require("./Event.ts");
 const { SlashCommandBuilder, GatewayIntentBits } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");

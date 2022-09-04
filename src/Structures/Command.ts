@@ -1,14 +1,22 @@
 const Discord = require("discord.js");
-const Client = require("./Client.js");
+import { Interaction, Message, SlashCommandBuilder } from "discord.js";
+import Client from "./Client.js";
 /**
  *
- * @param {Discord.Message | Discord.Interaction} message
+ * @param {Message | Interaction} message
  * @param {string[]} args
  * @param {Client} client
  */
-function RunFunction(message, args, client) {}
+function RunFunction(message, args, client) { }
 
 class Command {
+  usage: String;
+  name: String;
+  description: String;
+  type: String;
+  run: Function;
+  slash: SlashCommandBuilder;
+  middlewares: Middleware;
   /**
    * @param {objects} options
    */
