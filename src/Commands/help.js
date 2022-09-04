@@ -3,7 +3,7 @@ const Discord = require("discord.js"),
     Command = require("#Structures/Command.js"),
     fs = require("fs"),
     path = require("path"),
-    BuildPagination = require("#Utils/BuildPagination.js");
+    BuildPagination = require("#Utils/BuildPagination.ts");
 
 function generateHelpEmbeds(cmdsArr, category) {
     let embeds = [];

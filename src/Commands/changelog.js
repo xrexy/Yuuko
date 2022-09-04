@@ -1,8 +1,8 @@
 const Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
     { SlashCommandBuilder } = require('discord.js'),
     { execSync } = require('child_process'),
-    Footer = require("#Utils/Footer.js");
+    Footer = require("#Utils/Footer.ts");
 
 const name = "changelog";
 const description = "See what has changed with the recent updates.";

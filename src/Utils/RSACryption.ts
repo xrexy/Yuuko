@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const NodeRSA = require('node-rsa');
+import path = require('path');
+import fs = require('fs');
+import NodeRSA = require('node-rsa');
 
 /**
  * 
@@ -8,7 +8,7 @@ const NodeRSA = require('node-rsa');
  * @param {Boolean} type If true decrypts it, if false it encrypts it. By default is true.
  * @returns {*} The decrypted/encrypted item.
  */
-module.exports = function (item, type = true) {
+module.exports = function (item: string, type?: boolean): string {
     if (type === true) {
         let itemContent = path.join(__dirname, '../RSA/id_rsa');
 

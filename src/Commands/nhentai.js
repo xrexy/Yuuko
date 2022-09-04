@@ -1,6 +1,6 @@
 const Command = require("#Structures/Command.js"),
     { SlashCommandBuilder } = require('discord.js'),
-    CommandCategories = require("#Utils/CommandCategories.js");
+    CommandCategories = require("#Utils/CommandCategories.ts");
 
 const name = "nhentai";
 const usage = "nhentai <id>";

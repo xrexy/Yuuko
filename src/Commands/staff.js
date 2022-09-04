@@ -1,11 +1,11 @@
 const Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
-    Footer = require("#Utils/Footer.js"),
-    EmbedError = require("#Utils/EmbedError.js"),
-    GraphQLRequest = require("#Utils/GraphQLRequest.js"),
-    GraphQLQueries = require("#Utils/GraphQLQueries.js");
+    CommandCategories = require("#Utils/CommandCategories.ts"),
+    Footer = require("#Utils/Footer.ts"),
+    EmbedError = require("#Utils/EmbedError.ts"),
+    GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
+    GraphQLQueries = require("#Utils/GraphQLQueries.ts");
 
 const name = "staff";
 const usage = 'staff <name>';

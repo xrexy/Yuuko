@@ -1,5 +1,5 @@
 const Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
     { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 const name = "stats";

@@ -1,14 +1,14 @@
 const Discord = require("discord.js"),
     Command = require("#Structures/Command.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
-    EmbedError = require("#Utils/EmbedError.js"),
-    Footer = require("#Utils/Footer.js"),
+    EmbedError = require("#Utils/EmbedError.ts"),
+    Footer = require("#Utils/Footer.ts"),
     Canvas = require("canvas"),
     path = require("path"),
-    { roundRect } = require("#Utils/CanvasHelper.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
-    GraphQLRequest = require("#Utils/GraphQLRequest.js"),
-    GraphQLQueries = require("#Utils/GraphQLQueries.js");
+    { roundRect } = require("#Utils/CanvasHelper.ts"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
+    GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
+    GraphQLQueries = require("#Utils/GraphQLQueries.ts");
 
 const name = "usercard";
 const usage = 'usercard <anilist user>';

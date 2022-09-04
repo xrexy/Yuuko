@@ -4,4 +4,4 @@ module.exports = {
     Utils: "Utils",
     Misc: "Misc",
     Internal: "Internal",
-} 
+}

@@ -1,5 +1,5 @@
 const Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
     { SlashCommandBuilder } = require("discord.js");
 
 const name = "ping";

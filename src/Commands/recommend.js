@@ -1,12 +1,12 @@
 const Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
-    EmbedError = require("#Utils/EmbedError.js"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
+    EmbedError = require("#Utils/EmbedError.ts"),
     MangaCmd = require("#Commands/manga.js"),
     AnimeCmd = require("#Commands/anime.js"),
-    GraphQLRequest = require("#Utils/GraphQLRequest.js"),
-    GraphQLQueries = require("#Utils/GraphQLQueries.js");
+    GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
+    GraphQLQueries = require("#Utils/GraphQLQueries.ts");
 
 const name = "recommend";
 const usage = "recommend <anime | manga> <anilist user> <genre1, genreN>";

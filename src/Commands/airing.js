@@ -1,14 +1,14 @@
 const Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     Command = require("#Structures/Command.js"),
-    EmbedError = require("#Utils/EmbedError.js"),
-    GraphQLRequest = require("#Utils/GraphQLRequest.js"),
-    GraphQLQueries = require("#Utils/GraphQLQueries.js"),
-    Footer = require("#Utils/Footer.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
+    EmbedError = require("#Utils/EmbedError.ts"),
+    GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
+    GraphQLQueries = require("#Utils/GraphQLQueries.ts"),
+    Footer = require("#Utils/Footer.ts"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
     pagination = require("@acegoal07/discordjs-pagination"),
     ms = require("ms"),
-    BuildPagination = require("#Utils/BuildPagination.js");
+    BuildPagination = require("#Utils/BuildPagination.ts");
 
 const name = "airing";
 const usage = "airing <?in>";

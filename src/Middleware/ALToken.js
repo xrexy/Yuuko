@@ -1,6 +1,6 @@
 const Middleware = require("#Structures/Middleware.js");
 const AnilistUser = require("#Models/AnilistUser.js");
-const RSAcryption = require('#Utils/RSACryption.js');
+const RSAcryption = require('#Utils/RSACryption.ts');
 
 async function requireALToken(interaction) {
     let id = interaction.user.id;

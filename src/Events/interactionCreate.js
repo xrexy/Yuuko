@@ -1,7 +1,7 @@
 const Event = require("#Structures/Event.js"),
     { EmbedBuilder } = require('discord.js'),
-    Logging = require('#Utils/Logging.js'),
-    EmbedError = require("#Utils/EmbedError.js");
+    Logging = require('#Utils/Logging.ts'),
+    EmbedError = require("#Utils/EmbedError.ts");
 
 module.exports = new Event("interactionCreate", async (client, interaction) => {
     //console.log(interaction)

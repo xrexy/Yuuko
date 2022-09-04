@@ -1,8 +1,8 @@
 const Command = require("#Structures/Command.js"),
-    CommandCategories = require("#Utils/CommandCategories.js"),
+    CommandCategories = require("#Utils/CommandCategories.ts"),
     Discord = require("discord.js"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
-    Footer = require("#Utils/Footer.js"),
+    Footer = require("#Utils/Footer.ts"),
     path = require('path'),
     fs = require('fs');
 
