@@ -1,20 +1,13 @@
 import { ClientEvents, Events } from "discord.js";
-import Client from "./Client.js";
-/**
- * @template {keyof ClientEvents K}
- * @param {Client} client 
- * @param  {ClientEvents[K]} eventArgs 
- */
-function runFunction(client, ...eventArgs) {
+import { Client } from "./Client";
+function runFunction(client: Client, ...eventArgs: ClientEvents[keyof ClientEvents]) {
 
 }
-class Event {
+export class Event {
     event: Events;
     run: Function;
-    constructor(event, runFunction) {
+    constructor(event: Events, runFunction: Function) {
         this.event = event;
         this.run = runFunction;
     }
 }
-
-module.exports = Event;

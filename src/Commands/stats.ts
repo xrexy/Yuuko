@@ -5,7 +5,7 @@ const Command = require("#Structures/Command.ts"),
 const name = "stats";
 const description = "Shows you the statistics of the server & bot.";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,

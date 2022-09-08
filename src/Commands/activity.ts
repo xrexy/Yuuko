@@ -1,10 +1,9 @@
-const Discord = require("discord.js"),
+const CommandCategories = require("#Utils/CommandCategories.ts"),
     { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
     { mwGetUserEntry } = require("#Middleware/UserEntry.ts"),
     Command = require("#Structures/Command.ts"),
     EmbedError = require("#Utils/EmbedError.ts"),
     Footer = require("#Utils/Footer.ts"),
-    CommandCategories = require("#Utils/CommandCategories.ts"),
     GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
     GraphQLQueries = require("#Utils/GraphQLQueries.ts");
 
@@ -12,7 +11,7 @@ const name = "activity";
 const usage = "activity <user>";
 const description = "Searches for an user and shows you their most recent activity.";
 
-module.exports = new Command({
+export const command = new Command({
     name,
     usage,
     description,
@@ -30,9 +29,8 @@ module.exports = new Command({
 
         const userName = interaction.options.getString('user')
 
-        let vars = {
-            username: userName
-        };
+        let vars: { [key: string]: any; } = {}
+        username: userName
 
         if (!interaction.options.getString('user')) {
             // We try to use the one the user set

@@ -2,7 +2,7 @@ const Event = require("#Structures/Event.ts");
 const { ActivityType } = require('discord.js');
 const fs = require("fs");
 
-module.exports = new Event("ready", (client) => {
+export const ready = new Event("ready", (client) => {
 
     client.user.setPresence({ activities: [{ type: ActivityType.Watching, name: `${client.guilds.cache.size} servers` }], status: 'online' })
 

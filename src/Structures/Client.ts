@@ -1,11 +1,15 @@
-const Discord = require("discord.js");
-const fs = require("fs");
-const Command = require("./Command.ts");
-const Event = require("./Event.ts");
-const { SlashCommandBuilder, GatewayIntentBits } = require("discord.js");
-const { REST } = require("@discordjs/rest");
-const { Routes } = require("discord-api-types/v9");
-class Client extends Discord.Client {
+import * as Discord from "discord.js";
+import { SlashCommandBuilder, GatewayIntentBits } from "discord.js";
+import fs = require("fs");
+import { Command } from "./Command";
+import { Collection } from "discord.js";
+import { Event } from './Event';
+import { REST } from "@discordjs/rest";
+import { Routes } from "discord-api-types/v9";
+
+export class Client extends Discord.Client {
+    commands: any;
+    prefix: string;
     constructor() {
         super({
             intents: [
@@ -17,24 +21,17 @@ class Client extends Discord.Client {
             allowedMentions: { repliedUser: false }
         });
 
-        /**
-         * @type {Discord.Collection<string, Command>}
-         */
         this.commands = new Discord.Collection();
 
         this.prefix = process.env.PREFIX || "as!";
     }
-    start(token) {
+    start(token?) {
         console.log(`Starting Yuuko in ${process.env.NODE_ENV} enviroment.`);
         const slashCommands = [];
         fs.readdirSync("./src/Commands/")
-            .filter((file) => file.endsWith(".js"))
+            .filter((file) => file.endsWith(".ts"))
             .forEach((file) => {
-                /**
-                 * @type {Command}
-                 * Legacy commands with prefix
-                 */
-                const command = require(`#Commands/${file}`);
+                const command: Command = require(`#Commands/${file}`);
                 console.log(`Command ${command.name} loaded`);
                 this.commands.set(command.name, command);
 
@@ -47,8 +44,8 @@ class Client extends Discord.Client {
         (async () => {
             const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
-            const clientId = process.env.CLIENT_ID || '881173250091126845';
-            const guildId = process.env.GUILD_ID || '843208877326860299';
+            const clientId: string = process.env.CLIENT_ID.toString() || '881173250091126845';
+            const guildId: string = process.env.GUILD_ID.toString() || '843208877326860299';
 
             try {
                 console.log(`Started refreshing ${slashCommands.length} slash (/) commands.`);
@@ -73,9 +70,6 @@ class Client extends Discord.Client {
             fs.readdirSync("./src/Events")
                 .filter((file) => file.endsWith(".js"))
                 .forEach((file) => {
-                    /**
-                     * @type {Event}
-                     */
                     const event = require(`../Events/${file}`);
                     console.log(`Event ${event.event} loaded`);
                     this.on(event.event, event.run.bind(null, this));
@@ -85,5 +79,3 @@ class Client extends Discord.Client {
         })();
     }
 }
-
-module.exports = Client;

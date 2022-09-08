@@ -12,7 +12,7 @@ const name = "user";
 const usage = 'user <?anilist name>';
 const description = "Searches for an anilist user and displays information about them.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -30,7 +30,7 @@ module.exports = new Command({
 
     async run(interaction, args, run) {
         let anilistUser = interaction.options.getString('query');
-        let vars = { username: anilistUser };
+        let vars: { [key: string]: any; } = { username: anilistUser };
 
         // If the user hasn't provided a user
         if (!anilistUser) {

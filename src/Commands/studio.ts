@@ -11,7 +11,7 @@ const name = "studio";
 const usage = "studio <?>";
 const description = "Searches for an studio and displays a list of their anime";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -25,18 +25,18 @@ module.exports = new Command({
                 .setRequired(true)),
 
     async run(interaction, args, run) {
-        let vars = { query: interaction.options.getString('query') };
+        let vars: { [key: string]: any; } = { query: interaction.options.getString('query') };
 
         GraphQLRequest(GraphQLQueries.Studio, vars)
             .then((response, headers) => {
                 let data = response.Studio;
                 console.log(data);
                 if (data) {
-                    let animes = [];
+                    let animes: string | Array<string> = [];
                     for (let anime of data.media.nodes) {
                         animes = animes.concat(`[${anime.title.romaji || anime.title.english}]` + `(https://anilist.co/anime/${anime.id})`);
                     }
-                    animes = animes.toString().replaceAll(",", "\n");
+                    animes = animes.toString().replace(/:/g, "\n");
 
                     const studioEmbed = new EmbedBuilder()
                         // .setThumbnail(data.image.large)

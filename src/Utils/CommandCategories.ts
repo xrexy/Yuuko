@@ -1,4 +1,4 @@
-module.exports = {
+export let CommandCategories = {
     User: "User",
     Anilist: "Anilist",
     Utils: "Utils",

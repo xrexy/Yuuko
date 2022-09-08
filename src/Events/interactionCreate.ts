@@ -3,7 +3,7 @@ const Event = require("#Structures/Event.ts"),
     Logging = require('#Utils/Logging.ts'),
     EmbedError = require("#Utils/EmbedError.ts");
 
-module.exports = new Event("interactionCreate", async (client, interaction) => {
+export default new Event("interactionCreate", async (client, interaction) => {
     //console.log(interaction)
 
     // If the interaction wasn't a chat command, we ignore it

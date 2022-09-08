@@ -2,7 +2,7 @@ import path = require('path');
 import fs = require('fs');
 import NodeRSA = require('node-rsa');
 
-export function RSAcryption(item: String, type: Boolean): String {
+export function RSAcryption(item: string, type: Boolean): string {
     if (type === true) {
         let itemContent = path.join(__dirname, '../RSA/id_rsa');
 

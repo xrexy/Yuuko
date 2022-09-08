@@ -1,8 +1,8 @@
 export class Middleware {
-    name: String;
-    description: String;
+    name: string;
+    description: string;
     run: Function;
-    constructor(options: { name: String; description: String; run: Function; }) {
+    constructor(options: { name: string; description: string; run: Function; }) {
         this.name = options.name;
         this.description = options.description;
         this.run = options.run;

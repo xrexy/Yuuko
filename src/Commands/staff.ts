@@ -11,7 +11,7 @@ const name = "staff";
 const usage = 'staff <name>';
 const description = "Gives you info about a staff member from anilist's DB.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -25,7 +25,7 @@ module.exports = new Command({
                 .setRequired(true)),
 
     async run(interaction, args, run) {
-        let vars = { staffName: interaction.options.getString('query') };
+        let vars: { [key: string]: any; } = { staffName: interaction.options.getString('query') };
 
         // TODO: Fixme description length, it crashes the bot.
 

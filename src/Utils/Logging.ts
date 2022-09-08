@@ -1,7 +1,9 @@
 import path = require('path');
 import fs = require('fs');
+import { Command } from '#Structures/Command';
+import { Interaction } from 'discord.js';
 
-module.exports = (command, interaction) => {
+module.exports = (command: Command, interaction: Interaction) => {
     try {
         const logPath = path.join(__dirname, "../Logging/logs.txt");
         const currentDate = new Date().toISOString();

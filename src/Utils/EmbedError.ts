@@ -1,14 +1,6 @@
 import { EmbedBuilder } from "discord.js";
 
-/**
- * Returns a Discord embed with the error message.
- * @param {Error} err The error to embed.
- * @param {Object} params The parameters the user specified that might
- *                        have caused this error.
- * @param {Boolean} [showParams=true] Whether or not to show the parameters.
- * @returns {EmbedBuilder} The embed.
- */
-module.exports = (err, params = null, showparams = true) => {
+export function EmbedError(err: Error, params?: Object, showparams: Boolean = true): EmbedBuilder {
     const embed = new EmbedBuilder()
         .setTitle("Error")
         .addFields({ name: `Tracelog / Message `, value: "```" + `${err.toString()}` + "```" })

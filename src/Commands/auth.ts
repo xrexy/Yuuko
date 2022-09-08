@@ -12,7 +12,7 @@ const name = "auth";
 const usage = "auth <help | anilist_token>";
 const description = "Binds an existing AniList user to your Discord account in the bot database.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,

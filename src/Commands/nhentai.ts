@@ -6,7 +6,7 @@ const name = "nhentai";
 const usage = "nhentai <id>";
 const description = "Gets a hentai from nhentai based on a search result.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,

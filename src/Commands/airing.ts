@@ -14,7 +14,7 @@ const name = "airing";
 const usage = "airing <?in>";
 const description = "Gets the airing schedule for today or `period`. (e.g. `1 week` means today the next week.)";
 
-module.exports = new Command({
+export const command = new Command({
     name,
     usage,
     description,
@@ -27,7 +27,7 @@ module.exports = new Command({
                 .setDescription('Airing *in* (e.g. "1 week")')),
 
     async run(interaction, args, run) {
-        let vars = {};
+        let vars: { [key: string]: any; } = {};
         //^ Check if the user wants to search for a specific day
         let airingIn = 0;
 

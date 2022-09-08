@@ -1,4 +1,4 @@
-import AnilistUser = require("#Models/AnilistUser.js");
+import { AnilistUser } from "#Models/AnilistUser.js";
 import { Middleware } from "#Structures/Middleware";
 import { Interaction, Snowflake } from "discord.js";
 import { RSAcryption } from '#Utils/RSACryption';

@@ -14,7 +14,7 @@ const name = "usercard";
 const usage = 'usercard <anilist user>';
 const description = "Searches for an anilist user and displays a banner with the user's manga and anime statistics.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -28,7 +28,7 @@ module.exports = new Command({
                 .setRequired(true)),
 
     async run(interaction, args, run) {
-        let vars = { username: interaction.options.getString('query') };
+        let vars: { [key: string]: any; } = { username: interaction.options.getString('query') };
 
         // Make the HTTP Api request
         GraphQLRequest(GraphQLQueries.UserCard, vars)

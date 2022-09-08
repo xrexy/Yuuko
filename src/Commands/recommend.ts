@@ -12,7 +12,7 @@ const name = "recommend";
 const usage = "recommend <anime | manga> <anilist user> <genre1, genreN>";
 const description = "Recommends unwatched anime/manga based on the requested genre(s).";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -42,7 +42,7 @@ module.exports = new Command({
         let anilistUser = interaction.options.getString('anilist_user');
         let genres = interaction.options.getString('genres').replaceAll(", ", ",");
 
-        let vars = { type, userName: anilistUser };
+        let vars: { [key: string]: any; } = { type, userName: anilistUser };
 
         if (type != "ANIME" && type != "MANGA") {
             return interaction.reply({ embeds: [EmbedError(`Please specify either manga, or anime as your content type. (Yours was "${type}")`, null, false)] });

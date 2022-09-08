@@ -5,7 +5,7 @@ const Command = require("#Structures/Command.ts"),
 const name = "ping";
 const description = "Shows the ping of the bot!";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,

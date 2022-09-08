@@ -1,13 +1,7 @@
 import { Interaction, ButtonBuilder, EmbedBuilder } from "discord.js";
-import paginationWrapper = require("@acegoal07/discordjs-pagination");
+import { paginationWrapper } from "@acegoal07/discordjs-pagination";
 
-/**
- * Creates the default pagination object to avoid boilerplate.
- * @param {Array} pageList - An array of pages to be embedded.
- * @param {Interaction} interaction - The Discord interaction object.
- * @returns {Object} The pagination object.
- */
-module.exports = (interaction: Interaction, pageList: Array<EmbedBuilder>) => {
+export function BuildPagination(interaction: Interaction, pageList: Array<EmbedBuilder>): Object {
     const buttonList = [
         new ButtonBuilder().setCustomId("firstbtn").setLabel("First Page").setStyle(4),
         new ButtonBuilder().setCustomId("previousbtn").setLabel("Previous").setStyle(3),

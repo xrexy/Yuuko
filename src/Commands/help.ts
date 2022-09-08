@@ -46,7 +46,7 @@ function generateHelpEmbeds(cmdsArr, category) {
 const name = "help";
 const description = "Gives you the description of every command and how to use it.";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     slash: new SlashCommandBuilder()
@@ -77,7 +77,7 @@ module.exports = new Command({
         helpInfoEmbed.setColor('#1873bf');
 
         let pageList = [helpInfoEmbed];
-        for (category of Object.keys(cmdGroups)) {
+        for (const category of Object.keys(cmdGroups)) {
             let cmdHelpArr = cmdGroups[category].map((x) => `\`$\` **${x.name}** - \`${x.usage || 'No parameters required.'}\` \n ${x.description} \n`);
             pageList.push(...generateHelpEmbeds(cmdHelpArr, category));
         }

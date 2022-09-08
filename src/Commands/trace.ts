@@ -5,14 +5,14 @@ const Discord = require("discord.js"),
     EmbedError = require("#Utils/EmbedError.ts"),
     Footer = require("#Utils/Footer.ts"),
     CommandCategories = require("#Utils/CommandCategories.ts"),
-    AnimeCmd = require("#Commands/anime.js"),
+    AnimeCmd = require("#Commands/anime"),
     HumanizeDuration = require("humanize-duration");
 
 const name = "trace";
 const usage = 'trace <image attachment>';
 const description = "Gets an anime from an image.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,

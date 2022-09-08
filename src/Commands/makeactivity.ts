@@ -12,7 +12,7 @@ const name = "makeactivity";
 const usage = 'makeactivity <list | status>';
 const description = "Allows you to make an Anilist activity from Discord. Requires an AniList token.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -69,7 +69,7 @@ module.exports = new Command({
         }
 
         if (type === "status") {
-            let vars = { text: interaction.options.getString('text') };
+            let vars: { [key: string]: any; } = { text: interaction.options.getString('text') };
             GraphQLRequest(GraphQLQueries.TextActivity, vars, interaction.ALtoken)
                 .then((response, headers) => {
                     let data = response?.SaveTextActivity;
@@ -87,8 +87,8 @@ module.exports = new Command({
         }
 
         if (type === "list") {
-            let vars = {};
-            for (option of interaction.options._hoistedOptions) {
+            let vars: { [key: string]: any; } = {};
+            for (let option of interaction.options._hoistedOptions) {
                 if (option.name === "lists") {
                     // Split the lists by comma, then if there is a whitespace at the beginning of the string, removes it.
                     vars[option.name] = option.value.split(',').map((item) => item.replace(/^\s+/g, ''))

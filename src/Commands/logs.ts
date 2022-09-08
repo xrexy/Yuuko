@@ -9,7 +9,7 @@ const Command = require("#Structures/Command.ts"),
 const name = "logs";
 const description = "Allows you to see the 25 moost recent logs of the bot. (Trusted users only)";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,
@@ -19,7 +19,7 @@ module.exports = new Command({
 
     async run(interaction, args, run) {
 
-        if (JSON.parse(process.env.TRUSTED_USERS).includes(interaction.user.id)/* && process.env.NODE_ENV === "production"*/) {
+        if (process.env.TRUSTED_USERS.includes(interaction.user.id)/* && process.env.NODE_ENV === "production"*/) {
             if (!fs.existsSync(path.join(__dirname, "../Logging", "logs.txt"))) {
                 return interaction.reply(`\`There are no logs to view.\``);
             }

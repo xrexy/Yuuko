@@ -9,7 +9,7 @@ const Command = require("#Structures/Command.ts"),
 const name = "update";
 const description = "Checks for the latest update, and restarts the bot if any are found. (Trusted users only)";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,

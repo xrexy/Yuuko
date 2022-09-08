@@ -1,27 +1,18 @@
 const Discord = require("discord.js");
 import { Interaction, Message, SlashCommandBuilder } from "discord.js";
 import { Middleware } from "#Structures/Middleware";
-import Client from "./Client.js";
-/**
- *
- * @param {Message | Interaction} message
- * @param {string[]} args
- * @param {Client} client
- */
-function RunFunction(message, args, client) { }
-
-class Command {
-  usage: String;
-  name: String;
-  description: String;
-  type: Enumerator;
+import { Client } from '#Structures/Client';
+import { EnumDataType } from "sequelize/types";
+function RunFunction(message: Message | Interaction, args: string[], client: Client) { }
+export class Command {
+  usage: string;
+  name: string;
+  description: string;
+  type: string;
   run: Function;
   slash: SlashCommandBuilder;
   middlewares: Middleware;
-  /**
-   * @param {objects} options
-   */
-  constructor(options) {
+  constructor(options: { usage: string; name: string; description: string; type: "User" | "Anilist" | "Utils" | "Misc" | "Internal"; run: Function; slash: SlashCommandBuilder; middlewares: Middleware; }) {
     this.usage = options.usage;
     this.name = options.name;
     this.description = options.description;
@@ -35,5 +26,3 @@ class Command {
     }
   }
 }
-
-module.exports = Command;

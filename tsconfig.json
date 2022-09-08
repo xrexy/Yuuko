@@ -6,6 +6,7 @@
     },
     "compilerOptions": {
         "baseUrl": ".",
+        "target": "ES6",
         "paths": {
             "#Utils/*": [
                 "./src/Utils/*"

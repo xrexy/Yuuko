@@ -12,7 +12,7 @@ const Discord = require("discord.js"),
 const name = "aninews";
 const description = "Gets the latest anime news from RSS.";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,

@@ -1,4 +1,4 @@
-const Check = require("#Structures/Check.js");
+import { Check } from '#Structures/Check'
 const fs = require("fs");
 const path = require("path");
 const NodeRSA = require('node-rsa');

@@ -7,7 +7,7 @@ const Command = require("#Structures/Command.ts"),
 const name = "changelog";
 const description = "See what has changed with the recent updates.";
 
-module.exports = new Command({
+export default new Command({
     name,
     description,
     type: CommandCategories.Misc,

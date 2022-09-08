@@ -12,7 +12,7 @@ const name = "character";
 const usage = "character <name>";
 const description = "Gets a character from anilist's DB based on a search result.";
 
-module.exports = new Command({
+export default new Command({
     name,
     usage,
     description,
@@ -26,7 +26,7 @@ module.exports = new Command({
                 .setRequired(true)),
 
     async run(interaction, args, run) {
-        let vars = { charName: interaction.options.getString('query') };
+        let vars: { [key: string]: any; } = { charName: interaction.options.getString('query') };
 
         GraphQLRequest(GraphQLQueries.Character, vars)
             .then((response, headers) => {
