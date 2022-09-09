@@ -5,6 +5,7 @@
         ],
     },
     "compilerOptions": {
+        "moduleResolution": "node",
         "baseUrl": ".",
         "target": "ES6",
         "paths": {

@@ -1,6 +1,6 @@
 import { EmbedBuilder } from "discord.js";
 
-export function EmbedError(err: Error, params?: Object, showparams: Boolean = true): EmbedBuilder {
+export function EmbedError(err: string, params?: Object, showparams: Boolean = true): EmbedBuilder {
     const embed = new EmbedBuilder()
         .setTitle("Error")
         .addFields({ name: `Tracelog / Message `, value: "```" + `${err.toString()}` + "```" })

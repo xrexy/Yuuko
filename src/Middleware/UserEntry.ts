@@ -20,4 +20,4 @@ const mwGetUserEntry = new Middleware({
     run: getUserEntry
 })
 
-module.exports = { mwGetUserEntry }
+export { mwGetUserEntry }

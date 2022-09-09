@@ -25,7 +25,7 @@ export class Client extends Discord.Client {
 
         this.prefix = process.env.PREFIX || "as!";
     }
-    start(token?) {
+    start(token?: string) {
         console.log(`Starting Yuuko in ${process.env.NODE_ENV} enviroment.`);
         const slashCommands = [];
         fs.readdirSync("./src/Commands/")

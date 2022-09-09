@@ -1,5 +1,5 @@
-import fs = require('fs');
-import path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 const graphQLFolder = path.join(__dirname, "../GraphQL");
 
 let queries = fs.readdirSync(graphQLFolder).filter(x => x.endsWith('.gql'));

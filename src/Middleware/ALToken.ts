@@ -36,4 +36,4 @@ const mwOptionalALToken = new Middleware({
     run: optionalALToken
 })
 
-module.exports = { mwRequireALToken, mwOptionalALToken }
+export { mwRequireALToken, mwOptionalALToken }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-module.exports = function (query, vars: Object, token: string, url: string = process.env.ANILIST_API || "https://graphql.anilist.co") {
+export function GraphQLRequest(query, vars: Object, token?: string, url: string = process.env.ANILIST_API || "https://graphql.anilist.co") {
     if (token?.length > 1000) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
     }

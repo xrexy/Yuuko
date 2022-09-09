@@ -1,11 +1,11 @@
-const CommandCategories = require("#Utils/CommandCategories.ts"),
-    { EmbedBuilder, SlashCommandBuilder } = require('discord.js'),
-    { mwGetUserEntry } = require("#Middleware/UserEntry.ts"),
-    Command = require("#Structures/Command.ts"),
-    EmbedError = require("#Utils/EmbedError.ts"),
-    Footer = require("#Utils/Footer.ts"),
-    GraphQLRequest = require("#Utils/GraphQLRequest.ts"),
-    GraphQLQueries = require("#Utils/GraphQLQueries.ts");
+import { Command } from "#Structures/Command";
+import { CommandCategories } from "#Utils/CommandCategories";
+import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { mwGetUserEntry } from '#Middleware/UserEntry';
+import { EmbedError } from '#Utils/EmbedError';
+import { Footer } from '#Utils/Footer';
+import { GraphQLRequest } from '#Utils/GraphQLRequest';
+import { GraphQLQueries } from '#Utils/GraphQLQueries.js';
 
 const name = "activity";
 const usage = "activity <user>";
@@ -43,7 +43,7 @@ export const command = new Command({
         } else {
 
             try {
-                let uData = (await GraphQLRequest(GraphQLQueries.User, vars))?.User;
+                let uData: { [key: string]: any; } = (await GraphQLRequest(GraphQLQueries.User, vars))?.User;
                 vars = {
                     userid: uData?.id || "Unable to find ID"
                 }
@@ -55,7 +55,7 @@ export const command = new Command({
 
 
         GraphQLRequest(GraphQLQueries.Activity, vars)
-            .then((response, headers) => {
+            .then((response, headers => {
                 let data = response.Activity;
                 if (data) {
                     const embed = new EmbedBuilder()
@@ -82,9 +82,9 @@ export const command = new Command({
                     return interaction.reply({ embeds: [EmbedError(`Couldn't find any data.`, vars)] });
                 }
             })
-            .catch((error) => {
-                console.log(error);
-                interaction.reply({ embeds: [EmbedError(error, vars)] });
-            });
+                .catch((error) => {
+                    console.log(error);
+                    interaction.reply({ embeds: [EmbedError(error, vars)] });
+                });
     },
 });
